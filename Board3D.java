@@ -2,7 +2,11 @@
 public class Board3D {
 	
 	private int[][][] gameBoard;
+	//variable whoWins tells who wins. 0 for nobody winning yet. 1 for player1 (X). 2 for player2 (O)
+	public int whoWins;
 	
+	
+	//constructor 
 	public Board3D() {
 		gameBoard = new int[4][4][4];
 		
@@ -13,20 +17,29 @@ public class Board3D {
 				}
 			}
 		}
+		whoWins=0;
 	}
 	
-	public boolean checkRowWin(int z, int y, int x) {
+	public void checkRowWin(int x, int y, int z) {
 		int winCounter = 0;
 		
 		for (int counter = 0; counter < 4; counter++)
-			if ((gameBoard[z][y][counter] == 1) || (gameBoard[z][y][counter] == 2))
+			if (gameBoard[x][counter][z] == 1){
 				winCounter++;
-
+			}
+			else if (gameBoard[x][counter][z] == -1){
+				winCounter--;
+			}
 		
-		if (winCounter == 4)
-			return true;
-		
-		return false;
+		if (winCounter == 4){
+			whoWins= 1;
+		}
+		if (winCounter==-4){
+			whoWins= 2;
+		}
+		else{
+			whoWins= 0;
+		}
 	}
 	
 	public boolean checkColWin(int z, int y, int x) {
