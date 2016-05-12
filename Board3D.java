@@ -42,30 +42,46 @@ public class Board3D {
 		}
 	}
 	
-	public boolean checkColWin(int z, int y, int x) {
+	public void checkColWin(int x, int y, int z) {
 		int winCounter = 0;
-		
 		for (int counter = 0; counter < 4; counter++)
-			if ((gameBoard[z][counter][x] == 1) || (gameBoard[z][counter][x] == 2))
+			if (gameBoard[counter][y][z] == 1){
 				winCounter++;
+			}
+			else if (gameBoard[counter][y][z] == -1){
+				winCounter--;
+			}
 		
-		if (winCounter == 4)
-			return true;
-		
-		return false;
+		if (winCounter == 4){
+			whoWins= 1;
+		}
+		if (winCounter==-4){
+			whoWins= 2;
+		}
+		else{
+			whoWins= 0;
+		}
 	}
 	
-	public boolean checkPlaneWin(int z, int y, int x) {
+	public void checkPlaneWin(int x, int y, int z) {
 		int winCounter = 0;
-		
 		for (int counter = 0; counter < 4; counter++)
-			if ((gameBoard[counter][y][x] == 1) || (gameBoard[counter][y][x] == 2))
+			if (gameBoard[x][y][counter] == 1){
 				winCounter++;
+			}
+			else if (gameBoard[x][y][counter] == -1){
+				winCounter--;
+			}
 		
-		if (winCounter == 4)
-			return true;
-		
-		return false;
+		if (winCounter == 4){
+			whoWins= 1;
+		}
+		if (winCounter==-4){
+			whoWins= 2;
+		}
+		else{
+			whoWins= 0;
+		}
 	}
 	
 	public boolean check2DDiagWin(int z, int y, int x) {
