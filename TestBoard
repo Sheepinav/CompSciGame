@@ -1,16 +1,4 @@
 package testtactoe;
-
-public class main {
-	
-		public static void main(String[] args) {
-			ThreeTic.test();
-		}
-	}
-
-
-
-
-package testtactoe;
 import java.util.*;
 import java.awt.*;
 import javax.swing.*;
@@ -27,12 +15,13 @@ public class ThreeTic extends JPanel implements ActionListener {
 	
 	// want to store some extra data in our button
 	// so we can access it later
+	
 	class BoardButton extends JButton {
 		public int row, col, plane;
 		public BoardButton(int row, int col, int plane) {
-			this.row = row;
-			this.col = col;
-			this.plane = plane;
+			this.row = (3-row);
+			this.col = (col);
+			this.plane = (3-plane);
 			this.setText("   ");
 		}
 		public String toString() {
@@ -56,7 +45,7 @@ public class ThreeTic extends JPanel implements ActionListener {
 					Icon i = new ImageIcon("1.png");
 					b.setIcon(i);
 					add(b );
-					items[row*COLS+col] = b;
+					items[(3-row)*COLS+(col)] = b;
 				}
 			}
 		}
@@ -78,7 +67,7 @@ public class ThreeTic extends JPanel implements ActionListener {
 	
 	public ThreeTic() {
 		// now we just place the boards
-		setLayout( new GridLayout( 2, 2, 10, 10 ) );
+		setLayout( new GridLayout( 4, 1, 10, 10 ) );
 		for(int panel=0; panel<PANELS; panel++) {
 			SingleBoard sb = new SingleBoard(panel, this);
 			boards[panel] = sb;
@@ -97,8 +86,8 @@ public class ThreeTic extends JPanel implements ActionListener {
 	}
 
 	
-	public void actionPerformed(ActionEvent evt) {
-		BoardButton b = (BoardButton)evt.getSource();
+	public void actionPerformed(ActionEvent kayfequ) {
+		BoardButton b = (BoardButton)kayfequ.getSource();
 		// we could set this directly
 		// but we want to validate through setValue
 		//b.setText("X");
