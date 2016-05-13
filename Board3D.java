@@ -2,9 +2,6 @@
 public class Board3D {
 	
 	private int[][][] gameBoard;
-	//variable whoWins tells who wins. 0 for nobody winning yet. 1 for player1 (X). 2 for player2 (O)
-	public int whoWins;
-	
 	
 	//constructor 
 	public Board3D() {
@@ -17,10 +14,9 @@ public class Board3D {
 				}
 			}
 		}
-		whoWins=0;
 	}
 	
-	public void checkRowWin(int x, int y, int z) {
+	public int checkRowWin(int x, int y, int z) {
 		int winCounter = 0;
 		
 		for (int counter = 0; counter < 4; counter++)
@@ -32,17 +28,17 @@ public class Board3D {
 			}
 		
 		if (winCounter == 4){
-			whoWins= 1;
+			return 1;
 		}
 		if (winCounter==-4){
-			whoWins= 2;
+			return 2;
 		}
 		else{
-			whoWins= 0;
+			return 0;
 		}
 	}
 	
-	public void checkColWin(int x, int y, int z) {
+	public int checkColWin(int x, int y, int z) {
 		int winCounter = 0;
 		for (int counter = 0; counter < 4; counter++)
 			if (gameBoard[counter][y][z] == 1){
@@ -53,17 +49,17 @@ public class Board3D {
 			}
 		
 		if (winCounter == 4){
-			whoWins= 1;
+			return 1;
 		}
 		if (winCounter==-4){
-			whoWins= 2;
+			return 2;
 		}
 		else{
-			whoWins= 0;
+			return 0;
 		}
 	}
 	
-	public void checkPlaneWin(int x, int y, int z) {
+	public int checkPlaneWin(int x, int y, int z) {
 		int winCounter = 0;
 		for (int counter = 0; counter < 4; counter++)
 			if (gameBoard[x][y][counter] == 1){
@@ -74,13 +70,13 @@ public class Board3D {
 			}
 		
 		if (winCounter == 4){
-			whoWins= 1;
+			return 1;
 		}
 		if (winCounter==-4){
-			whoWins= 2;
+			return 2;
 		}
 		else{
-			whoWins= 0;
+			return 0;
 		}
 	}
 	
