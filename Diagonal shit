@@ -1,1 +1,485 @@
 
+public class diaganol {
+	private int[][][] gameBoard = new int[4][4][4];
+	
+	public int checkdiagnol1(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[0][n][n]==1){
+				winCounter++;
+			} else if (gameBoard[0][n][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol2(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[1][n][n]==1){
+				winCounter++;
+			} else if (gameBoard[0][n][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol3(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[2][n][n]==1){
+				winCounter++;
+			} else if (gameBoard[0][n][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol4(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[3][n][n]==1){
+				winCounter++;
+			} else if (gameBoard[0][n][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol5(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][0][n]==1){
+				winCounter++;
+			} else if (gameBoard[n][0][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol6(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][1][n]==1){
+				winCounter++;
+			} else if (gameBoard[n][1][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol7(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][2][n]==1){
+				winCounter++;
+			} else if (gameBoard[n][2][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol8(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][3][n]==1){
+				winCounter++;
+			} else if (gameBoard[n][3][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol9(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[0][3-n][n]==1){
+				winCounter++;
+			} else if (gameBoard[0][3-n][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol10(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[1][3-n][n]==1){
+				winCounter++;
+			} else if (gameBoard[1][3-n][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol11(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[2][3-n][n]==1){
+				winCounter++;
+			} else if (gameBoard[2][3-n][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol12(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[3][3-n][n]==1){
+				winCounter++;
+			} else if (gameBoard[3][3-n][n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol13(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][0][3-n]==1){
+				winCounter++;
+			} else if (gameBoard[n][0][3-n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol14(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][1][3-n]==1){
+				winCounter++;
+			} else if (gameBoard[n][1][3-n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol15(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][2][3-n]==1){
+				winCounter++;
+			} else if (gameBoard[n][2][3-n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol16(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][3][3-n]==1){
+				winCounter++;
+			} else if (gameBoard[n][3][3-n]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol17(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][n][0]==1){
+				winCounter++;
+			} else if (gameBoard[n][n][0]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol18(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][n][1]==1){
+				winCounter++;
+			} else if (gameBoard[n][n][1]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol19(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][n][2]==1){
+				winCounter++;
+			} else if (gameBoard[n][n][2]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol20(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[n][n][3]==1){
+				winCounter++;
+			} else if (gameBoard[n][n][3]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol21(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[3-n][n][0]==1){
+				winCounter++;
+			} else if (gameBoard[3-n][n][0]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol22(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[3-n][n][1]==1){
+				winCounter++;
+			} else if (gameBoard[3-n][n][1]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol23(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[3-n][n][2]==1){
+				winCounter++;
+			} else if (gameBoard[3-n][n][2]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+	
+	public int checkdiagnol24(){
+		int winCounter=0;
+		for (int n=0; n<4; n++){
+			if (gameBoard[3-n][n][3]==1){
+				winCounter++;
+			} else if (gameBoard[3-n][n][3]==-1){
+				winCounter--;
+			}
+		}
+		if (winCounter == 4){
+			return 1;
+		}
+		if (winCounter==-4){
+			return 2;
+		}
+		else{
+			return 0;
+		}
+	}
+}
+
