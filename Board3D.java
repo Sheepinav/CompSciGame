@@ -3,6 +3,7 @@ public class Board3D {
 	
 	private int[][][] gameBoard;
 	
+	
 	//constructor 
 	public Board3D() {
 		gameBoard = new int[4][4][4];
