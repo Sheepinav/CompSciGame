@@ -2,6 +2,7 @@
 public class diaganol {
 	private int[][][] gameBoard = new int[4][4][4];
 	
+	
 	public int checkdiagonal1(){
 		int winCounter=0;
 		for (int n=0; n<4; n++){
