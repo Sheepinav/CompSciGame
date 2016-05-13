@@ -97,7 +97,7 @@ public class ThreeTic extends JPanel implements ActionListener {
 		System.out.println(b );
 	}
 	
-	
+	 
 	public static void test() {
 		JFrame frm = new JFrame("Layout Test"); 
 		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -107,4 +107,7 @@ public class ThreeTic extends JPanel implements ActionListener {
 		frm.setVisible(true);
 	}
 	
-}
+
+	//creates data board for technical use
+	public int[][][] gameBoard= new int[4][4][4];
+	}
