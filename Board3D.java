@@ -32,7 +32,7 @@ public class Board3D {
 			return 1;
 		}
 		if (winCounter==-4){
-			return 2;
+			return -1;
 		}
 		else{
 			return 0;
@@ -53,7 +53,7 @@ public class Board3D {
 			return 1;
 		}
 		if (winCounter==-4){
-			return 2;
+			return -1;
 		}
 		else{
 			return 0;
@@ -74,7 +74,7 @@ public class Board3D {
 			return 1;
 		}
 		if (winCounter==-4){
-			return 2;
+			return -1;
 		}
 		else{
 			return 0;
