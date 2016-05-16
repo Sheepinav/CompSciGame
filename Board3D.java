@@ -1,10 +1,14 @@
 
+/*
+ * Class 'Board3D'
+ * This class(...)
+ */
+
 public class Board3D {
 	
 	private int[][][] gameBoard;
 	
-	
-	//constructor 
+	// Constructor
 	public Board3D() {
 		gameBoard = new int[4][4][4];
 		
@@ -17,68 +21,46 @@ public class Board3D {
 		}
 	}
 	
+	// For the next user-inputted coordinate, check its respective row for a win
 	public int checkRowWin(int x, int y, int z) {
 		int winCounter = 0;
 		
 		for (int counter = 0; counter < 4; counter++)
-			if (gameBoard[x][counter][z] == 1){
-				winCounter++;
-			}
-			else if (gameBoard[x][counter][z] == -1){
-				winCounter--;
-			}
-		
-		if (winCounter == 4){
+			winCounter += gameBoard[x][counter][z];
+		 
+		if (winCounter == 4)
 			return 1;
-		}
-		if (winCounter==-4){
+		else if (winCounter==-4)
 			return -1;
-		}
-		else{
-			return 0;
-		}
+		
+		return 0;
 	}
 	
+	// For the next user-inputted coordinate, check its respective column for a win
 	public int checkColWin(int x, int y, int z) {
 		int winCounter = 0;
 		for (int counter = 0; counter < 4; counter++)
-			if (gameBoard[counter][y][z] == 1){
-				winCounter++;
-			}
-			else if (gameBoard[counter][y][z] == -1){
-				winCounter--;
-			}
+			winCounter += gameBoard[counter][y][z];
 		
-		if (winCounter == 4){
+		if (winCounter == 4)
 			return 1;
-		}
-		if (winCounter==-4){
+		else if (winCounter == -4)
 			return -1;
-		}
-		else{
-			return 0;
-		}
+		
+		return 0;
 	}
 	
 	public int checkPlaneWin(int x, int y, int z) {
 		int winCounter = 0;
 		for (int counter = 0; counter < 4; counter++)
-			if (gameBoard[x][y][counter] == 1){
-				winCounter++;
-			}
-			else if (gameBoard[x][y][counter] == -1){
-				winCounter--;
-			}
+			winCounter += gameBoard[x][y][counter];
 		
-		if (winCounter == 4){
+		if (winCounter == 4)
 			return 1;
-		}
-		if (winCounter==-4){
+		else if (winCounter == -4)
 			return -1;
-		}
-		else{
-			return 0;
-		}
+		
+		return 0;
 	}
 	
 	public boolean check2DDiagWin(int z, int y, int x) {
