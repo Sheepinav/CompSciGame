@@ -58,98 +58,93 @@ public class Board3D {
 		return 0;
 	}
 	
-	public int checkdiagonal1(){
-		int winCounter=0;
+	public int checkDiagonal01() {
+		int winCounter = 0;
 		for (int n = 0; n < 4; n++){
-			if (gameBoard[0][n][n]==1){
+			if (gameBoard[0][n][n] == 1)
 				winCounter++;
-			} else if (gameBoard[0][n][n]==-1){
+			else if (gameBoard[0][n][n]==-1)
 				winCounter--;
-			}
 		}
 		
 		if (winCounter == 4)
 			return 1;
-		else if (winCounter==-4)
+		else if (winCounter == -4)
 			return -1;
 		
 		return 0;
 	}
 	
-	public int checkdiagonal2(){
-		int winCounter=0;
-		for (int n=0; n<4; n++){
-			if (gameBoard[1][n][n]==1){
+	public int checkDiagonal02() {
+		int winCounter = 0;
+		for (int n = 0; n < 4; n++){
+			if (gameBoard[1][n][n] == 1)
 				winCounter++;
-			} else if (gameBoard[0][n][n]==-1){
+			else if (gameBoard[0][n][n] == -1)
 				winCounter--;
-			}
 		}
 		
 		if (winCounter == 4)
 			return 1;
-		else if (winCounter==-4)
+		else if (winCounter == -4)
 			return -1;
 		
 		return 0;
 	}
 	
-	public int checkdiagonal3(){
-		int winCounter=0;
-		for (int n=0; n<4; n++){
-			if (gameBoard[2][n][n]==1){
+	public int checkDiagonal03() {
+		int winCounter = 0;
+		for (int n = 0; n < 4; n++){
+			if (gameBoard[2][n][n] == 1)
 				winCounter++;
-			} else if (gameBoard[0][n][n]==-1){
+			else if (gameBoard[0][n][n] == -1)
 				winCounter--;
-			}
 		}
 		
 		if (winCounter == 4)
 			return 1;
-		else if (winCounter==-4)
+		else if (winCounter == -4)
 			return -1;
 		
 		return 0;
 	}
 	
-	public int checkdiagonal4(){
-		int winCounter=0;
-		for (int n=0; n<4; n++){
-			if (gameBoard[3][n][n]==1){
+	public int checkDiagonal04() {
+		int winCounter = 0;
+		for (int n = 0; n < 4; n++){
+			if (gameBoard[3][n][n] == 1)
 				winCounter++;
-			} else if (gameBoard[0][n][n]==-1){
+			else if (gameBoard[0][n][n] == -1)
 				winCounter--;
-			}
 		}
 		
 		if (winCounter == 4)
 			return 1;
-		else if (winCounter==-4)
+		else if (winCounter == -4)
 			return -1;
 		
 		return 0;
 	}
 	
-	public int checkdiagonal5(){
-		int winCounter=0;
-		for (int n=0; n<4; n++){
-			if (gameBoard[n][0][n]==1){
+	public int checkDiagonal05() {
+		int winCounter = 0;
+		for (int n = 0; n < 4; n++) {
+			if (gameBoard[n][0][n] == 1)
 				winCounter++;
-			} else if (gameBoard[n][0][n]==-1){
+			else if (gameBoard[n][0][n] == -1)
 				winCounter--;
-			}
 		}
 		
 		if (winCounter == 4)
 			return 1;
-		else if (winCounter==-4)
+		else if (winCounter == -4)
 			return -1;
 		
 		return 0;
 	}
 	
-	public int checkdiagonal6(){
-		int winCounter=0;
+	public int checkDiagonal6() {
+		int winCounter = 0;
 		for (int n=0; n<4; n++){
 			if (gameBoard[n][1][n]==1){
 				winCounter++;
@@ -221,7 +216,7 @@ public class Board3D {
 	}
 	
 	public int checkdiagonal10(){
-		int winCounter=0;
+		int winCounter = 0;
 		for (int n=0; n<4; n++){
 			if (gameBoard[1][3-n][n]==1){
 				winCounter++;
