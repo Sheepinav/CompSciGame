@@ -1,19 +1,12 @@
 
 /*
- * Class 'Board3D'
+ * Class 'WinChecker'
  * This class checks all the 76 possible combinations for a win in a 4x4 3D tic-tac-toe game.
  * If a win is detected by a checking method, the program will return 1 for a win by the 'X'
  * player, -1 by the 'O' player, and 0 if no win is detected.
  */
 
-public class Board3D {
-	
-	private int[][][] gameBoard;
-	
-	// Constructor
-	public Board3D() {
-		gameBoard = new int[4][4][4];
-	}
+public class WinChecker {
 	
 	// For the next user-inputted coordinate, check its respective row for a win
 	public int checkRowWin(int x, int y, int z) {
