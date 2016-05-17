@@ -19,13 +19,23 @@ public class ThreeTic extends JPanel implements ActionListener {
 	class BoardButton extends JButton {
 		public int row, col, plane;
 		public BoardButton(int row, int col, int plane) {
-			this.row = (3-row);
+			this.row = (row);
 			this.col = (col);
-			this.plane = (3-plane);
+			this.plane = (plane);
 			this.setText("   ");
+		}
+		public int toCol(){
+			return col;	
+		}
+		public int toRow(){
+			return row;	
+		}
+		public void toPlane(){
+			System.out.println(plane);	
 		}
 		public String toString() {
 			return "(" + row + "," + col + "," + plane + ") = " + this.getText();
+			
 		}
 	}
 	
@@ -40,12 +50,12 @@ public class ThreeTic extends JPanel implements ActionListener {
 			setLayout( new GridLayout( ROWS, COLS ) );
 			for (int row=0; row<ROWS; row++) {
 				for (int col=0; col<COLS; col++) {
-					BoardButton b = new BoardButton(row, col, plane);
+					BoardButton b = new BoardButton(3-row, col, 3-plane);
 					b.addActionListener(listener);
 					Icon i = new ImageIcon("1.png");
 					b.setIcon(i);
 					add(b );
-					items[(3-row)*COLS+(col)] = b;
+					items[(row)*COLS+(col)] = b;
 				}
 			}
 		}
@@ -95,8 +105,11 @@ public class ThreeTic extends JPanel implements ActionListener {
 		b.setEnabled(false);
 		currentPlayer = (currentPlayer=='X') ? 'O' : 'X';
 		System.out.println(b );
-	}
-	
+	//b.setBackground(KFQFace.png);
+	Icon d = new ImageIcon("SnoopDoggyDogg.png");
+	b.setIcon(d);
+	//System.out.println(kayfequ.getSource());
+		}
 	 
 	public static void test() {
 		JFrame frm = new JFrame("Layout Test"); 
