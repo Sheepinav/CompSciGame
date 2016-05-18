@@ -9,7 +9,7 @@ import java.awt.event.*;
 // then throw it in an applet later
 public class ThreeTic extends JPanel implements ActionListener {
 	public static final int PANELS = 4;
-	
+	private int turncount=1;
 	private SingleBoard [] boards = new SingleBoard[PANELS];
 	private char currentPlayer = 'X';  
 	
@@ -24,17 +24,15 @@ public class ThreeTic extends JPanel implements ActionListener {
 			this.plane = (plane);
 			this.setText("   ");
 		}
-		public int toCol(){
-			return col;	
-		}
-		public int toRow(){
-			return row;	
-		}
-		public void toPlane(){
-			System.out.println(plane);	
-		}
+		
 		public String toString() {
-			return "(" + row + "," + col + "," + plane + ") = " + this.getText();
+			if(turncount%2==0){
+				turncount++;
+				return "-1 + (" + row + "," + col + "," + plane + ") = " + this.getText();
+			} else {
+				turncount++;
+				return "+1 + (" + row + "," + col + "," + plane + ") = " + this.getText();
+			}
 			
 		}
 	}
@@ -102,9 +100,10 @@ public class ThreeTic extends JPanel implements ActionListener {
 		// but we want to validate through setValue
 		//b.setText("X");
 		setValue(b.row, b.col, b.plane, currentPlayer);
-		b.setEnabled(false);
+	//	b.setEnabled(false);
 		currentPlayer = (currentPlayer=='X') ? 'O' : 'X';
 		System.out.println(b );
+		
 	//b.setBackground(KFQFace.png);
 	Icon d = new ImageIcon("SnoopDoggyDogg.png");
 	b.setIcon(d);
