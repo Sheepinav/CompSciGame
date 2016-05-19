@@ -57,7 +57,8 @@ public class WinChecker {
 	
 	public int checkDiagonal() {
 		int winCounter = 0;
-	//diagonal 1 code 	
+		
+		// Diagonal checker #1	
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[0][n][n];
 		
@@ -65,7 +66,8 @@ public class WinChecker {
 			return 1;
 		else if (winCounter == -4)
 			return -1;
-	//diagonal 2 code 
+		
+		// Diagonal checker #2	
 		winCounter = 0;
 		for (int n = 0; n < 4; n++) {
 			if (gameBoard[1][n][n] == 1)
@@ -77,6 +79,7 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
+		// Diagonal checker #3
 		winCounter = 0;
 		for (int n = 0; n < 4; n++) {
 			if (gameBoard[2][n][n] == 1)
@@ -90,11 +93,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal04() {
-		int winCounter = 0;
+		// Diagonal checker #4
+		winCounter = 0;
 		for (int n = 0; n < 4; n++) {
 			if (gameBoard[3][n][n] == 1)
 				winCounter++;
@@ -107,11 +107,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal05() {
-		int winCounter = 0;
+		// Diagonal checker #5
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][0][n];
 		
@@ -120,11 +117,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal06() {
-		int winCounter = 0;
+		// Diagonal checker #6
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][1][n];
 		
@@ -133,11 +127,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal07() {
-		int winCounter = 0;
+		// Diagonal checker #7
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][2][n];
 		
@@ -146,11 +137,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal08() {
-		int winCounter = 0;
+		// Diagonal checker #8
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][3][n];
 		
@@ -159,11 +147,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal09() {
-		int winCounter = 0;
+		// Diagonal checker #9
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[0][3 - n][n];
 		
@@ -172,11 +157,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal10() {
-		int winCounter = 0;
+		// Diagonal checker #10
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[1][3 - n][n];
 		
@@ -185,11 +167,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal11() {
-		int winCounter = 0;
+		// Diagonal checker #11
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[2][3 - n][n];
 		
@@ -198,11 +177,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal12() {
-		int winCounter = 0;
+		// Diagonal checker #12
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[3][3 - n][n];
 		
@@ -211,11 +187,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal13() {
-		int winCounter = 0;
+		// Diagonal checker #13
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][0][3 - n];
 		
@@ -224,11 +197,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal14() {
-		int winCounter = 0;
+		// Diagonal checker #14
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][1][3 - n];
 		
@@ -237,11 +207,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal15() {
-		int winCounter = 0;
+		// Diagonal checker #15
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][2][3 - n];
 		
@@ -250,11 +217,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal16() {
-		int winCounter = 0;
+		// Diagonal checker #16
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][3][3 - n];
 		
@@ -263,11 +227,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal17() {
-		int winCounter = 0;
+		// Diagonal checker #17
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][n][0];
 		
@@ -276,11 +237,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal18() {
-		int winCounter = 0;
+		// Diagonal checker #18
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][n][1];
 		
@@ -289,11 +247,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal19() {
-		int winCounter = 0;
+		// Diagonal checker #19
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][n][2];
 		
@@ -302,11 +257,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal20() {
-		int winCounter = 0;
+		// Diagonal checker #20
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[n][n][3];
 		
@@ -315,11 +267,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal21() {
-		int winCounter = 0;
+		// Diagonal checker #21
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[3 - n][n][0];
 		
@@ -328,11 +277,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal22() {
-		int winCounter = 0;
+		// Diagonal checker #22
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[3 - n][n][1];
 		
@@ -341,11 +287,8 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal23() {
-		int winCounter = 0;
+		// Diagonal checker #23
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[3 - n][n][2];
 		
@@ -354,11 +297,8 @@ public class WinChecker {
 		else if (winCounter== -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal24() {
-		int winCounter = 0;
+		// Diagonal checker #24
+		winCounter = 0;
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[3 - n][n][3];
 		
@@ -367,6 +307,7 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
+		// If no wins are detected, return 0
 		return 0;
 	}
 }
