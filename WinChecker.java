@@ -55,8 +55,9 @@ public class WinChecker {
 	 * The following 24 methods check all the possible diagonal combinations in the board
 	 */
 	
-	public int checkDiagonal01() {
+	public int checkDiagonal() {
 		int winCounter = 0;
+	//diagonal 1 code 	
 		for (int n = 0; n < 4; n++)
 			winCounter += gameBoard[0][n][n];
 		
@@ -64,29 +65,19 @@ public class WinChecker {
 			return 1;
 		else if (winCounter == -4)
 			return -1;
-		
-		return 0;
-	}
-	
-	public int checkDiagonal02() {
-		int winCounter = 0;
+	//diagonal 2 code 
+		winCounter = 0;
 		for (int n = 0; n < 4; n++) {
 			if (gameBoard[1][n][n] == 1)
 				winCounter++;
 			else if (gameBoard[0][n][n] == -1)
 				winCounter--;
-		}
-		
 		if (winCounter == 4)
 			return 1;
 		else if (winCounter == -4)
 			return -1;
 		
-		return 0;
-	}
-	
-	public int checkDiagonal03() {
-		int winCounter = 0;
+		winCounter = 0;
 		for (int n = 0; n < 4; n++) {
 			if (gameBoard[2][n][n] == 1)
 				winCounter++;
