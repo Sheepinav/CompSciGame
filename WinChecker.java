@@ -69,12 +69,9 @@ public class WinChecker {
 		
 		// Diagonal checker #2	
 		winCounter = 0;
-		for (n = 0; n < 4; n++) {
-			if (gameBoard[1][n][n] == 1)
-				winCounter++;
-			else if (gameBoard[0][n][n] == -1)
-				winCounter--;
-		}
+			for (n = 0; n < 4; n++)
+			winCounter += gameBoard[1][n][n];
+		
 		if (winCounter == 4)
 			return 1;
 		else if (winCounter == -4)
@@ -82,12 +79,8 @@ public class WinChecker {
 		
 		// Diagonal checker #3
 		winCounter = 0;
-		for (n = 0; n < 4; n++) {
-			if (gameBoard[2][n][n] == 1)
-				winCounter++;
-			else if (gameBoard[0][n][n] == -1)
-				winCounter--;
-		}
+			for (n = 0; n < 4; n++)
+			winCounter += gameBoard[2][n][n];
 		
 		if (winCounter == 4)
 			return 1;
@@ -96,12 +89,8 @@ public class WinChecker {
 		
 		// Diagonal checker #4
 		winCounter = 0;
-		for (n = 0; n < 4; n++) {
-			if (gameBoard[3][n][n] == 1)
-				winCounter++;
-			else if (gameBoard[0][n][n] == -1)
-				winCounter--;
-		}
+			for (n = 0; n < 4; n++)
+			winCounter += gameBoard[3][n][n];
 		
 		if (winCounter == 4)
 			return 1;
