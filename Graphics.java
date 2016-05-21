@@ -1,4 +1,16 @@
-package testtactoe;
+package tictacpepe;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Abhi
+ */
+
 import java.util.*;
 import java.awt.*;
 import javax.swing.*;
@@ -7,7 +19,7 @@ import java.awt.event.*;
 // I know you did an applet
 // it's easier to just do a panel, test in a form
 // then throw it in an applet later
-public class ThreeTic extends JPanel implements ActionListener {
+public class Graphics extends JPanel implements ActionListener {
 	public static final int PANELS = 4;
 	private int turncount=1;
 	private SingleBoard [] boards = new SingleBoard[PANELS];
@@ -73,7 +85,7 @@ public class ThreeTic extends JPanel implements ActionListener {
 	}
 	
 	
-	public ThreeTic() {
+	public Graphics() {
 		// now we just place the boards
 		setLayout( new GridLayout( 4, 1, 10, 10 ) );
 		for(int panel=0; panel<PANELS; panel++) {
@@ -114,7 +126,7 @@ public class ThreeTic extends JPanel implements ActionListener {
 		JFrame frm = new JFrame("Layout Test"); 
 		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frm.getContentPane().setLayout(new BorderLayout());
-		frm.getContentPane().add(new ThreeTic(), BorderLayout.CENTER);
+		frm.getContentPane().add(new Graphics(), BorderLayout.CENTER);
 		frm.pack();
 		frm.setVisible(true);
 	}
