@@ -297,7 +297,47 @@ public class WinChecker {
 		else if (winCounter == -4)
 			return -1;
 		
-		// If no wins are detected, return 0
-		return 0;
+		// Diagonal checker #25
+		winCounter = 0;
+		for (n = 0; n < 4; n++)
+			winCounter += gameBoard[n][n][n];
+						
+		if (winCounter == 4)
+			return 1;
+		else if (winCounter == -4)
+			return -1;
+			
+		// Diagonal checker #26
+		winCounter = 0;
+		for (n = 0; n < 4; n++)
+			winCounter += gameBoard[n][3-n][n];
+						
+		if (winCounter == 4)
+			return 1;
+		else if (winCounter == -4)
+				return -1;
+		
+		// Diagonal checker #27
+		winCounter = 0;
+		for (n = 0; n < 4; n++)
+			winCounter += gameBoard[3-n][3-n][n];
+						
+		if (winCounter == 4)
+			return 1;
+		else if (winCounter == -4)
+			return -1;
+			
+		// Diagonal checker #28
+		winCounter = 0;
+		for (n = 0; n < 4; n++)
+			winCounter += gameBoard[3-n][n][n];
+									
+		if (winCounter == 4)
+			return 1;
+		else if (winCounter == -4)
+			return -1;
+			
+	// If no wins are detected, return 0
+			return 0;
 	}
 }
