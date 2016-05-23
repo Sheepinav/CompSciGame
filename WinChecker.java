@@ -10,6 +10,7 @@ public class WinChecker {
 	
 	// Holds the information of the buttons 
 	private int[][][] hiddenBoard = new int[4][4][4];
+	private int winState;
 	
 	public void setValue(int x, int y, int z, int val) {
 		hiddenBoard[x][y][z] = val;
@@ -347,4 +348,35 @@ public class WinChecker {
 	// If no wins are detected, return 0
 			return 0;
 	}
+	
+	public int checkwin(int x, int y, int z){
+		// Check for wins (needs work/cleaning up)
+				winState = checkColWin(x, y, z);
+				if (winState == 1)
+					return 1;
+				else if (winState == -1)
+					return -1;
+				winState = checkRowWin(x, y, z);
+				if (winState == 1)
+					return 1;
+				else if (winState == -1)
+					return -1;
+				winState = checkPlaneWin(x, y, z);
+				if (winState == 1)
+					return 1;
+				else if (winState == -1)
+					return -1;
+				winState = checkDiagonal();
+				if (winState == 1)
+					return 1;
+				else if (winState == -1)
+					return -1;
+				else
+					return 0;
+	}
+	
+	public int getWinState() {
+		return winState;
+	}
+	
 }
