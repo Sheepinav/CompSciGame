@@ -9,7 +9,7 @@ public class Board2D extends JPanel {
 	public static final int ROWS = 4;
 	public static final int COLUMNS = 4;
 	
-	private BoardButton[][] buttonArray = new BoardButton[4][4];
+	public BoardButton[][] buttonArray = new BoardButton[4][4];
 	
 	public Board2D(int plane, ActionListener al) {
 		setLayout(new GridLayout(ROWS, COLUMNS));
