@@ -11,7 +11,6 @@ public class Graphics extends JPanel implements ActionListener {
 	public final ImageIcon xImage = new ImageIcon("x_image.jpg");
 	public final ImageIcon oImage = new ImageIcon("o_image.jpg");
 	private int currentPlayer = 1;
-	private int winState = 0;
 	WinChecker gameChecker = new WinChecker();
 	
 	private Board2D[] gameBoard = new Board2D[PLANES];
@@ -43,21 +42,22 @@ public class Graphics extends JPanel implements ActionListener {
 		// Feed the value of 'currentPlayer' into 'hiddenArray'
 		gameChecker.setValue(x, y, z, currentPlayer);
 		
-		// Check for wins (needs work/cleaning up)
-		winState = gameChecker.checkColWin(x, y, z);
-		if (winState != 0)
-			System.out.println("Someone won!");
-		winState = gameChecker.checkRowWin(x, y, z);
-		if (winState != 0)
-			System.out.println("Someone won!");
-		winState = gameChecker.checkPlaneWin(x, y, z);
-		if (winState != 0)
-			System.out.println("Someone won!");
-		winState = gameChecker.checkDiagonal();
-		if (winState != 0)
-			System.out.println("Someone won!");
+		if (gameChecker.checkwin(x,y,z) == 1)
+			System.out.println("X wins");
+		else if (gameChecker.checkwin(x,y,z) == -1)
+			System.out.println("O wins");
 		
 		button.setEnabled(false);
+		
+		if (gameChecker.getWinState() != 0) {
+			for (int plane = 0; plane < PLANES; plane++) {
+				for (int row = 0; row < Board2D.ROWS; row++) {
+					for (int col = 0; col < Board2D.COLUMNS; col++) {
+						gameBoard[plane].buttonArray[row][col].setEnabled(false);
+					}
+				}
+			}
+		}
 		
 		currentPlayer = (currentPlayer == 1) ? -1 : 1;
 	}
