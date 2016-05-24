@@ -61,6 +61,7 @@ public class WinChecker {
 	
 	/* 
 	 * The following 24 methods check all the possible diagonal combinations in the board
+	 * All 24 checks are within one method
 	 */
 	
 	public int checkDiagonal() {
@@ -349,8 +350,8 @@ public class WinChecker {
 			return 0;
 	}
 	
+	// Check for wins (needs work/cleaning up)
 	public int checkwin(int x, int y, int z){
-		// Check for wins (needs work/cleaning up)
 				winState = checkColWin(x, y, z);
 				if (winState == 1)
 					return 1;
@@ -375,6 +376,7 @@ public class WinChecker {
 					return 0;
 	}
 	
+	// Return 'winState'
 	public int getWinState() {
 		return winState;
 	}
