@@ -1,10 +1,13 @@
 
+// Import required library
 import javax.swing.JButton;
 
 public class BoardButton extends JButton {
 	
+	// Set instance variables
 	public int x, y, z;
 	
+	// Create constructor to set coordinates to instance variables
 	public BoardButton(int x, int y, int z) {
 		this.x = x;
 		this.y = y;
