@@ -1,17 +1,22 @@
 
+// Import required libraries
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Main extends JFrame implements ActionListener {
 	
+	// Declare private variables
 	private JButton resetButton;
 	private Container window = getContentPane();
 	private Graphics g;
+	private JLabel scoreBoard;
 	
+	// The 'main' method will create the GUI
 	public static void main(String[] args) {
 		Main frame = new Main();
 		
@@ -21,6 +26,7 @@ public class Main extends JFrame implements ActionListener {
 		frame.setTitle("4-D Tic-Tac-Toe");
 	}
 	
+	// Method in 'Main' class to create the GUI
 	private void createMenu() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
@@ -30,18 +36,22 @@ public class Main extends JFrame implements ActionListener {
 		
 		resetButton = new JButton("Reset");
 		resetButton.addActionListener(this);
+		window.add(resetButton, BorderLayout.EAST);
 		
-		window.add(resetButton, BorderLayout.WEST);
 		g = new Graphics();
-		window.add(g, BorderLayout.EAST);
+		window.add(g, BorderLayout.CENTER);
+		
+		scoreBoard = new JLabel("Score: ");
+		window.add(scoreBoard, BorderLayout.WEST);
 		
 		pack();
 	}
-
+	
+	// When the button is pressed, the game should be reset
 	public void actionPerformed(ActionEvent e) {
 		window.remove(g);
 		g = new Graphics();
-		window.add(g, BorderLayout.EAST);
+		window.add(g, BorderLayout.CENTER);
 		pack();
 	}
 	
