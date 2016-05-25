@@ -15,6 +15,8 @@ public class Main extends JFrame implements ActionListener {
 	private Container window = getContentPane();
 	private Graphics g;
 	private JLabel scoreBoard;
+	private int xScore = 0;
+	private int oScore = 0;
 	
 	// The 'main' method will create the GUI
 	public static void main(String[] args) {
@@ -41,8 +43,8 @@ public class Main extends JFrame implements ActionListener {
 		g = new Graphics();
 		window.add(g, BorderLayout.CENTER);
 		
-		scoreBoard = new JLabel("Score: ");
-		window.add(scoreBoard, BorderLayout.WEST);
+		scoreBoard = new JLabel("X's wins: " + xScore + " | O's wins: " + oScore);
+		window.add(scoreBoard, BorderLayout.NORTH);
 		
 		pack();
 	}
@@ -50,6 +52,14 @@ public class Main extends JFrame implements ActionListener {
 	// When the button is pressed, the game should be reset
 	public void actionPerformed(ActionEvent e) {
 		window.remove(g);
+		window.remove(scoreBoard);
+		
+		xScore += g.returnXWin();
+		oScore += g.returnOWin();
+		
+		scoreBoard = new JLabel("X's wins: " + xScore + " | O's wins: " + oScore);
+		window.add(scoreBoard, BorderLayout.NORTH);
+		
 		g = new Graphics();
 		window.add(g, BorderLayout.CENTER);
 		pack();
