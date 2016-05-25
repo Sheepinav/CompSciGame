@@ -13,7 +13,8 @@ public class Graphics extends JPanel implements ActionListener {
 	public final ImageIcon xImage = new ImageIcon("x_image.jpg");
 	public final ImageIcon oImage = new ImageIcon("o_image.jpg");
 	private int currentPlayer = 1;
-	private int gameWin = 0;
+	private int XWin = 0;
+	private int OWin = 0;
 	WinChecker gameChecker = new WinChecker();
 	
 	private Board2D[] gameBoard = new Board2D[PLANES];
@@ -48,9 +49,9 @@ public class Graphics extends JPanel implements ActionListener {
 		// Feed the value of 'currentPlayer' into 'hiddenArray'
 		gameChecker.setValue(x, y, z, currentPlayer);
 		
-		if (gameChecker.checkwin(x,y,z) == 1)
+		if (gameChecker.checkwin(x, y, z) == 1)
 			System.out.println("X wins");
-		else if (gameChecker.checkwin(x,y,z) == -1)
+		else if (gameChecker.checkwin(x, y, z) == -1)
 			System.out.println("O wins");
 		
 		// Disable the pressed button
@@ -66,11 +67,23 @@ public class Graphics extends JPanel implements ActionListener {
 				}
 			}
 			
-			gameWin++;
+			if (gameChecker.getWinState() == 1) {
+				XWin++;
+			} else {
+				OWin++;
+			}
 		}
 		
 		// Flip the current player
 		currentPlayer = (currentPlayer == 1) ? -1 : 1;
+	}
+	
+	public int returnXWin() {
+		return XWin;
+	}
+	
+	public int returnOWin() {
+		return OWin;
 	}
 	
 }
