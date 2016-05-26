@@ -1,12 +1,10 @@
 
 // Import required libraries
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import javax.sound.sampled.*;
+import javax.swing.*;
 
 public class Main extends JFrame implements ActionListener {
 	
@@ -19,13 +17,14 @@ public class Main extends JFrame implements ActionListener {
 	private int oScore = 0;
 	
 	// The 'main' method will create the GUI
-	public static void main(String[] args) {
+	public static void main(String[] args) throws UnsupportedAudioFileException, IOException {
 		Main frame = new Main();
 		
 		frame.createMenu();
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
-		frame.setTitle("4-D Tic-Tac-Toe");
+		frame.setTitle("3D Tic-Tac-Toe");
+		frame.playMusic();
 	}
 	
 	// Method in 'Main' class to create the GUI
@@ -47,6 +46,19 @@ public class Main extends JFrame implements ActionListener {
 		window.add(scoreBoard, BorderLayout.NORTH);
 		
 		pack();
+	}
+	
+	private void playMusic() throws UnsupportedAudioFileException, IOException {
+		Clip clip;
+		File soundFile = new File("something.wav");
+		AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
+		
+		try { 
+			clip = AudioSystem.getClip();
+			clip.open(audioInputStream);
+			clip.setFramePosition(0);
+			clip.start(); // Plays the audio
+		} catch (Exception e) {}
 	}
 	
 	// When the button is pressed, the game should be reset
