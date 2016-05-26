@@ -1,10 +1,8 @@
 
 // Import required libraries
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.GridLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JPanel;
+import java.awt.event.*;
+import java.awt.*;
+import javax.swing.*;
 
 public class Graphics extends JPanel implements ActionListener {
 	
@@ -41,21 +39,28 @@ public class Graphics extends JPanel implements ActionListener {
 		int z = button.getZCoord();
 		
 		// Set the image of the button to an 'X' or 'O' depending on player
-		if (currentPlayer == 1)
+		if (currentPlayer == 1) {
 			button.setIcon(xImage);
-		else
+			button.setDisabledIcon(xImage);
+		}
+		else {
 			button.setIcon(oImage);
+			button.setDisabledIcon(oImage);
+		}
+		
+		button.setEnabled(false);
 		
 		// Feed the value of 'currentPlayer' into 'hiddenArray'
 		gameChecker.setValue(x, y, z, currentPlayer);
 		
-		if (gameChecker.checkwin(x, y, z) == 1)
+		if (gameChecker.checkwin(x, y, z) == 1) {
 			System.out.println("X wins");
-		else if (gameChecker.checkwin(x, y, z) == -1)
+			JOptionPane.showMessageDialog(this, "X won!");
+		} else if (gameChecker.checkwin(x, y, z) == -1) {
 			System.out.println("O wins");
-		
-		// Disable the pressed button
-		button.setEnabled(false);
+			JOptionPane.showMessageDialog(this, "O won!");
+		}
+			
 		
 		// If a win is detected, disable all the buttons
 		if (gameChecker.getWinState() != 0) {
@@ -67,6 +72,7 @@ public class Graphics extends JPanel implements ActionListener {
 				}
 			}
 			
+			// Increment the win of the player who won
 			if (gameChecker.getWinState() == 1) {
 				XWin++;
 			} else {
@@ -78,6 +84,7 @@ public class Graphics extends JPanel implements ActionListener {
 		currentPlayer = (currentPlayer == 1) ? -1 : 1;
 	}
 	
+	// Return wins
 	public int returnXWin() {
 		return XWin;
 	}
